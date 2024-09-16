@@ -1,0 +1,8 @@
+<ul>
+  {{#each this.args.tasks as |task|}}
+    <li>
+      <input type="checkbox" checked={{task.isCompleted}} {{on "change" (fn this.toggleTask task)}} />
+      {{task.title}}
+    </li>
+  {{/each}}
+</ul>

@@ -1,7 +1,16 @@
-{{page-title "MyTodoApp"}}
+<div class="container">
+  <h1>To-Do List</h1>
 
-{{outlet}}
+  <!-- Add Task Component -->
+  <AddTask 
+    @newTaskTitle={{this.newTaskTitle}} 
+    @setNewTaskTitle={{this.setNewTaskTitle}} 
+    @addTask={{this.addTask}} 
+  />
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+  <!-- Task List Component -->
+  <TaskList 
+    @tasks={{this.model.tasks}} 
+    @toggleTask={{this.toggleTask}} 
+  />
+</div>
